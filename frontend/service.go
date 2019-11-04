@@ -12,8 +12,8 @@ import (
 	"github.com/btcsuite/btcd/rpcclient"
 	"github.com/sirupsen/logrus"
 
-	"github.com/adityapk00/lightwalletd/common"
-	"github.com/adityapk00/lightwalletd/walletrpc"
+	"github.com/ycashfoundation/lightwalletd/common"
+	"github.com/ycashfoundation/lightwalletd/walletrpc"
 )
 
 var (

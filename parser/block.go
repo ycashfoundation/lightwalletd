@@ -4,8 +4,8 @@ import (
 	"fmt"
 
 	"github.com/pkg/errors"
-	"github.com/adityapk00/lightwalletd/parser/internal/bytestring"
-	"github.com/adityapk00/lightwalletd/walletrpc"
+	"github.com/ycashfoundation/lightwalletd/parser/internal/bytestring"
+	"github.com/ycashfoundation/lightwalletd/walletrpc"
 )
 
 type Block struct {
@@ -63,7 +63,7 @@ func (b *Block) HasSaplingTransactions() bool {
 	return false
 }
 
-// see https://github.com/adityapk00/lightwalletd/issues/17#issuecomment-467110828
+// see https://github.com/ycashfoundation/lightwalletd/issues/17#issuecomment-467110828
 const genesisTargetDifficulty = 520617983
 
 // GetHeight() extracts the block height from the coinbase transaction. See

@@ -15,9 +15,9 @@ import (
 	"google.golang.org/grpc/peer"
 	"google.golang.org/grpc/reflection"
 
-	"github.com/adityapk00/lightwalletd/common"
-	"github.com/adityapk00/lightwalletd/frontend"
-	"github.com/adityapk00/lightwalletd/walletrpc"
+	"github.com/ycashfoundation/lightwalletd/common"
+	"github.com/ycashfoundation/lightwalletd/frontend"
+	"github.com/ycashfoundation/lightwalletd/walletrpc"
 )
 
 var log *logrus.Entry
@@ -108,7 +108,7 @@ func main() {
 
 	if !opts.noTLS && (opts.tlsCertPath == "" || opts.tlsKeyPath == "") {
 		println("Please specify a TLS certificate/key to use. You can use a self-signed certificate.")
-		println("See 'https://github.com/adityapk00/lightwalletd/blob/master/README.md#running-your-own-zeclite-lightwalletd'")
+		println("See 'https://github.com/ycashfoundation/lightwalletd/blob/master/README.md#running-your-own-zeclite-lightwalletd'")
 		os.Exit(1)
 	}
 
@@ -158,15 +158,9 @@ func main() {
 	if err != nil {
 		log.WithFields(logrus.Fields{
 			"error": err,
-		}).Warn("zcash.conf failed, will try empty credentials for rpc")
+		}).Warn("ycash.conf failed")
 
-		rpcClient, err = frontend.NewZRPCFromCreds("127.0.0.1:8232", "", "")
-
-		if err != nil {
-			log.WithFields(logrus.Fields{
-				"error": err,
-			}).Warn("couldn't start rpc conn. won't be able to send transactions")
-		}
+		return
 	}
 
 	// Get the sapling activation height from the RPC

@@ -19,6 +19,11 @@ func NewZRPCFromConf(confPath string) (*rpcclient.Client, error) {
 	username := cfg.Section("").Key("rpcuser").String()
 	password := cfg.Section("").Key("rpcpassword").String()
 
+	if len(rpcaddr) == 0 || len(rpcport) == 0 {
+		println("Please add 'rpcbind' and 'rpcport' in the config file at " + confPath)
+		return nil, errors.New("No rpcbind or rpcport in conf file")
+	}
+
 	return NewZRPCFromCreds(net.JoinHostPort(rpcaddr, rpcport), username, password)
 }
 

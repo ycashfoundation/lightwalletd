@@ -1,6 +1,6 @@
 # Overview
 
-Zecwallet lightwalletd is a fork of [lightwalletd](https://github.com/adityapk00/lightwalletd) from the ECC. 
+Zecwallet lightwalletd is a fork of [lightwalletd](https://github.com/ycashfoundation/lightwalletd) from the ECC. 
 
 It is a backend service that provides a bandwidth-efficient interface to the Zcash blockchain for the [Zecwallet light wallet](https://github.com/adityapk00/zecwallet-lite-lib).
 
