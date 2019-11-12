@@ -241,8 +241,8 @@ func (s *SqlStreamer) GetLightdInfo(ctx context.Context, in *walletrpc.Empty) (*
 	// TODO these are called Error but they aren't at the moment.
 	// A success will return code 0 and message txhash.
 	return &walletrpc.LightdInfo{
-		Version:                 "0.1-zeclightd",
-		Vendor:                  "ZecWallet LightWalletD",
+		Version:                 "0.1-yec-lightwalletd",
+		Vendor:                  "YcashFoundation",
 		TaddrSupport:            true,
 		ChainName:               chainName,
 		SaplingActivationHeight: uint64(saplingHeight),
